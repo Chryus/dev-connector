@@ -7,6 +7,7 @@ const connectDB = async () => {
     await mongoose.connect(db, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
+      useFindAndModify: false // Make Mongoose use `findOneAndUpdate()`. Note that this option is `true` by default, you need to set it to false.
     });
 
     console.log('MongoDB Connected...');
