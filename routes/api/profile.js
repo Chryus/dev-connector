@@ -6,6 +6,7 @@ const normalize = require('normalize-url');
 
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
+const { remove } = require('../../models/User');
 
 // @route   GET api/profile/me
 // @desc    Get current user's profile
@@ -208,5 +209,24 @@ router.put(
     }
   }
 );
+
+// @route    DELETE api/profile/experience/:exp_id
+// @desc     Delete profile experience
+// @access   Private
+router.delete('/experience/:exp_id', auth, async (req, res) => {
+  try {
+    const foundProfile = await Profile.findOne({ user: req.user.id });
+
+    foundProfile.experience = foundProfile.experience.filter(
+      (exp) => exp._id.toString() !== req.params.exp_id
+    );
+
+    await foundProfile.save();
+    return res.status(200).json(foundProfile);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
+  }
+});
 
 module.exports = router;
