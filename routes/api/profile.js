@@ -8,7 +8,7 @@ const normalize = require('normalize-url');
 
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
-const { remove } = require('../../models/User');
+const checkObjectId = require('../../middleware/checkObjectId');
 
 // @route   GET api/profile/me
 // @desc    Get current user's profile
@@ -120,7 +120,7 @@ router.get('/', async (req, res) => {
 // @route   Get api/profile/user/:user_id
 // @desc    Get profile by user id
 // @access  Public
-router.get('/user/:user_id', async (req, res) => {
+router.get('/user/:user_id', checkObjectId('user_id'), async (req, res) => {
   try {
     const profile = await Profile.findOne({
       user: req.params.user_id
