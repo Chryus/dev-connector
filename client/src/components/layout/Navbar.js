@@ -13,6 +13,11 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         </Link>
       </li>
       <li>
+        <Link to='/posts' className='hide-sm'>
+          Posts
+        </Link>
+      </li>
+      <li>
         {' '}
         <Link to='/dashboard'>
           <i className='fas fa-user'></i>{' '}
