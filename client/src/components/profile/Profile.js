@@ -8,7 +8,6 @@ import ProfileExperience from './ProfileExperience';
 import ProfileEducation from './ProfileEducation';
 import ProfileGithub from './ProfileGithub';
 import { connect } from 'react-redux';
-import { profile_url } from 'gravatar';
 import { getProfileById } from '../../actions/profile';
 
 const Profile = ({
