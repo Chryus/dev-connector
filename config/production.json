@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://jasper123:jasper123@devconnector.csq5x.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "jwtSecret": "mysecret",
+  "githubClientId": "359d572a6b3fee829ac4",
+  "githubSecret": "43adfc2ba7eac3a25ffdeebcabb68fc23d4fe147"
+}
