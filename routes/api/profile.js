@@ -86,7 +86,7 @@ router.post(
     // Object.entries returns and array we can loop over to normalize our object values
     for (const [key, value] of Object.entries(socialfields)) {
       if (value && value.length > 0)
-        socialfields[key] = normalize(value, { forceHttps: true });
+        socialfields[key] = normalizeUrl(value, { forceHttps: true });
     }
     profileFields.social = socialfields;
 
