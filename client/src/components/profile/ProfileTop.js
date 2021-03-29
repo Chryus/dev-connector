@@ -22,7 +22,7 @@ const ProfileTop = ({
       <div className='icons my-1'>
         {website && (
           <a href={website} target='_blank' rel='noopener noreferrer'>
-            <i className='fab fa-globe fa-2x'></i>
+            <i className='fa fa-globe fa-2x'></i>
           </a>
         )}
 
